@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Magic School";
+    src: url(../assets/fonts/MagicSchool.ttf);
+}
+
+@font-face {
+    font-family: "Lumos";
+    src: url(../assets/fonts/Lumos.ttf);
+}
+
+$title-font: "Magic School";
+$subtitle-font: "Lumos";
+
+$background-color: #00071a;
+$title-color: #b6a571;
+$title-second-color: #cdb373;
+$title-third-color: #e7da9a;
+$title-fourth-color:  rgba(255, 255, 255, 0.8);
+
+$letter-color: #F6F0FF;
+
+.page {
+    background-color: $background-color;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    text-align: center;
+
+    &__header {
+        border-bottom: 1px solid $letter-color;
+        top: 0;
+        width: 100%;
+        padding: 5%;
+        margin: 0 0 0 -3%;
+        position: fixed;
+
+        &__nav {
+            display: flex;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-content: center;
+            width: 90%;
+
+            &__logo {
+                width: 20%;
+                cursor: pointer;
+            }
+
+            &__link {
+                color: $letter-color;
+                font-family: $subtitle-font;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 70%;
+                cursor: pointer;
+            }
+
+            &__link:hover {
+                color: $title-second-color;
+            }
+        }
+    }
+
+    &__title {
+        background-image: linear-gradient(-45deg, transparent 48%, $title-fourth-color 50%, transparent 52% 100%),
+            linear-gradient(45deg, $title-color, $title-second-color, $title-third-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 40%;
+        font-family: $title-font;
+        font-size: 430%;
+        
+    }
+}
+

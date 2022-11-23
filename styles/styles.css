@@ -1,1 +1,52 @@
-/*# sourceMappingURL=styles.css.map */
+@font-face {
+  font-family: "Magic School";
+  src: url(../assets/fonts/MagicSchool.ttf);
+}
+@font-face {
+  font-family: "Lumos";
+  src: url(../assets/fonts/Lumos.ttf);
+}
+.page {
+  background-color: #00071a;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  text-align: center;
+}
+.page__header {
+  border-bottom: 1px solid #F6F0FF;
+  top: 0;
+  width: 100%;
+  padding: 5%;
+  margin: 0 0 0 -3%;
+  position: fixed;
+}
+.page__header__nav {
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  width: 90%;
+}
+.page__header__nav__logo {
+  width: 20%;
+  cursor: pointer;
+}
+.page__header__nav__link {
+  color: #F6F0FF;
+  font-family: "Lumos";
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 70%;
+  cursor: pointer;
+}
+.page__header__nav__link:hover {
+  color: #cdb373;
+}
+.page__title {
+  background-image: linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.8) 50%, transparent 52% 100%), linear-gradient(45deg, #b6a571, #cdb373, #e7da9a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 40%;
+  font-family: "Magic School";
+  font-size: 430%;
+}/*# sourceMappingURL=styles.css.map */
