@@ -16,14 +16,7 @@ const getStaff = async () => {
 }
 getStaff();
 
-const getSpells = async () => {
-  const response = await fetch("https://hp-api.herokuapp.com/api/spells")
-  const results = await response.json();
-  const spellsData = await results;
-  let spells = spellsData;
-  localStorage.setItem("allSpells", JSON.stringify(spells))
-}
-getSpells();
+
 
 
 

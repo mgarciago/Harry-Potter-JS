@@ -1,8 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+//---------------------------------------------------FILES IMPORT-----------------------------------------------------------------
+
+@import "./list-styles.scss";
+@import "./detail-styles.scss";
+
+//---------------------------------------------------FONTS IMPORT-----------------------------------------------------------------
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 @font-face {
     font-family: "Magic School";
     src: url(../assets/fonts/MagicSchool.ttf);
 }
+
+//--------------------------------------------------VARIABLES---------------------------------------------------------------------
 
 $title-font: "Magic School";
 $common-font: "Roboto Condensed", sans-serif;
@@ -11,6 +20,8 @@ $background-color: #000;
 $secondary-color: rgb(81, 68, 107);
 
 $letter-color: #f6f0ff;
+
+//-----------------------------------------------MAIN STYLES-----------------------------------------------------------------------
 
 * {
     margin: 0;
@@ -28,39 +39,41 @@ $letter-color: #f6f0ff;
             margin: 0 0 0 -3%;
             position: fixed;
             z-index: 3;
-    
+
             &__logo {
                 width: 15%;
                 cursor: pointer;
             }
-        }
-    
-        &__nav {
-            display: flex;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            align-content: center;
-            width: 90%;
-            z-index: 3;
-            margin: 30% 0 0% 4%;
-    
-            &__link {
-                color: $letter-color;
-                font-family: $common-font;
-                font-weight: 600;
-                text-transform: uppercase;
-                font-size: 70%;
-                letter-spacing: 3px;
+            &__nav {
+                display: flex;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                align-content: center;
+                width: 90%;
                 z-index: 3;
-                cursor: pointer;
-            }
+                margin: 3% 0 0% 4%;
     
-            &__link:hover {
-                color: $secondary-color;
+                &__link {
+                    color: $letter-color;
+                    background-color: transparent;
+                    border: none;
+                    font-family: $common-font;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 70%;
+                    letter-spacing: 3px;
+                    z-index: 3;
+                    cursor: pointer;
+                }
+    
+                &__link:hover {
+                    color: $secondary-color;
+                }
             }
         }
-    
+
+
         &__stars,
         &__twinkling,
         &__clouds {
@@ -73,42 +86,53 @@ $letter-color: #f6f0ff;
             height: 100%;
             display: block;
         }
-    
+
         &__stars {
             background: $background-color url(../assets/images/stars.png) repeat top center;
             z-index: 0;
         }
-    
+
         &__twinkling {
             background: transparent url(../assets/images/twinkling.png) repeat top center;
             z-index: 1;
             animation: move-twink-back 200s linear infinite;
         }
-    
+
         &__clouds {
             background: transparent url(../assets/images/clouds.png) repeat top center;
             z-index: 2;
             opacity: 0.4;
             animation: move-clouds-back 200s linear infinite;
         }
-    
-        &__title {
-            color: $letter-color;
-            margin-top: 5%;
-            font-family: $title-font;
-            font-size: 480%;
-            background: -webkit-linear-gradient(#eee, #333);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0px -3px 0px rgb(0 0 0 / 20%);
-            display: block;
-            position: relative;
-            z-index: 3;
+
+        &__title-container {
+           
+            margin-top: 30%;
+            &__title {
+                color: $letter-color;
+                margin-top: 10%;
+                font-family: $title-font;
+                font-size: 480%;
+                background: -webkit-linear-gradient(#eee, #333);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0px -3px 0px rgb(0 0 0 / 20%);
+                display: block;
+                position: relative;
+                z-index: 3;
+            }
         }
 
+        &__introduction {
+            &--disabled {
+                display: none;
+            }
+        }
     }
-
 }
+
+//------------------------------------------------KEYFRAMES------------------------------------------------------------------------
 
 @keyframes move-twink-back {
     from {
