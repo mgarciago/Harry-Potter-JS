@@ -1,6 +1,8 @@
-const allStudents = JSON.parse(localStorage.getItem("allStudents"));
-const allStaf = JSON.parse(localStorage.getItem("allStaff"));
+import { getStudents, getStaff } from "../info.js";
 import {getDetail} from "./detail.js"
+
+const allStudents = await getStudents();
+const allStaff = await getStaff();
 
 function paintStudents() {
 
@@ -25,7 +27,7 @@ function paintStudents() {
   allStudents.map((student) => {
     const card = document.createElement("div");
     card.classList.add("page__container__characters__card");
-    card.addEventListener("click", getDetail);
+    card.addEventListener("click", () => getDetail(student));
     const image = document.createElement("img");
     image.classList.add("page__container__characters__card__image");
     image.src = student.image;
@@ -58,7 +60,7 @@ function paintStaff() {
   }
   
   const staffContainer = document.getElementsByClassName("staff-container");
-  allStaf.map((staff) => {
+  allStaff.map((staff) => {
     const card = document.createElement("div");
     card.classList.add("page__container__characters__card");
     card.addEventListener("click", getDetail);
