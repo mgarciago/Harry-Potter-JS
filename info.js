@@ -1,10 +1,13 @@
+let allCharacters;
+let allSpells;
+
 const charactersCall = () => {
   fetch("https://hp-api.herokuapp.com/api/characters")
     .then((response) => {
       return response.json();
     })
     .then((myCharacters) => {
-      const allCharacters = myCharacters;
+      allCharacters = myCharacters;
       console.log(allCharacters)
     })
     .catch((error) => {
@@ -18,7 +21,7 @@ const spellsCall = () => {
       return response.json();
     })
     .then((mySpells) => {
-      const allSpells = mySpells;
+      allSpells = mySpells;
       console.log(allSpells)
     })
     .catch((error) => {
@@ -26,4 +29,4 @@ const spellsCall = () => {
     });
 };
 
-export {charactersCall, spellsCall};
+export {charactersCall}
