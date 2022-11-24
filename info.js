@@ -1,32 +1,29 @@
-let allCharacters;
-let allSpells;
+const getStudents = async () => {
+  const response = await fetch("https://hp-api.herokuapp.com/api/characters/students")
+  const results = await response.json();
+  const studentsData = await results;
+  let students = studentsData;
+  localStorage.setItem("allStudents", JSON.stringify(students))
+}
+getStudents();
 
-const charactersCall = () => {
-  fetch("https://hp-api.herokuapp.com/api/characters")
-    .then((response) => {
-      return response.json();
-    })
-    .then((myCharacters) => {
-      allCharacters = myCharacters;
-      console.log(allCharacters)
-    })
-    .catch((error) => {
-      alert("Can not get this information", error);
-    });
-};
+const getStaff = async () => {
+  const response = await fetch("https://hp-api.herokuapp.com/api/characters/staff")
+  const results = await response.json();
+  const staffData = await results;
+  let staff = staffData;
+  localStorage.setItem("allStaff", JSON.stringify(staff))
+}
+getStaff();
 
-const spellsCall = () => {
-  fetch("https://hp-api.herokuapp.com/api/spells")
-    .then((response) => {
-      return response.json();
-    })
-    .then((mySpells) => {
-      allSpells = mySpells;
-      console.log(allSpells)
-    })
-    .catch((error) => {
-      alert("Can not get this information", error);
-    });
-};
+const getSpells = async () => {
+  const response = await fetch("https://hp-api.herokuapp.com/api/spells")
+  const results = await response.json();
+  const spellsData = await results;
+  let spells = spellsData;
+  localStorage.setItem("allSpells", JSON.stringify(spells))
+}
+getSpells();
 
-export {charactersCall}
+
+
