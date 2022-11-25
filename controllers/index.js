@@ -1,5 +1,5 @@
-import { paintStudents } from "../views/list.js";
-import { paintStaff } from "../views/list.js";
+import { paintCharacters } from "../views/list.js";
+
 
 function backHome() {
   const principalTitle = document.getElementsByClassName("title");
@@ -8,19 +8,14 @@ function backHome() {
     title.innerText = "Platform 9¾";
   }
 
-  const staffContainer = document.getElementsByClassName("staff-container");
-  for (let staff of staffContainer) {
-    staff.classList.add("page__container__characters--disabled");
-  }
-
-  const studentsContainer =
-    document.getElementsByClassName("students-container");
-  for (let students of studentsContainer) {
-    students.classList.add("page__container__characters--disabled");
+  const charactersContainer =
+    document.getElementsByClassName("characters-container");
+  for (let character of charactersContainer) {
+    character.classList.add("page__container__characters--disabled");
   }
 
   const detailsContainer = document.getElementsByClassName("detail-container");
-  for(let details of detailsContainer){
+  for (let details of detailsContainer) {
     details.classList.add("page__container__details--disabled");
   }
 
@@ -35,12 +30,13 @@ for (let logo of logoImage) {
   logo.addEventListener("click", backHome);
 }
 
-const navStudents = document.getElementsByClassName("students");
-for (let button of navStudents) {
-  button.addEventListener("click", paintStudents);
+const navCharacters = document.getElementsByClassName("characters");
+for (let button of navCharacters) {
+  button.addEventListener("click", paintCharacters);
 }
 
-const navStaff = document.getElementsByClassName("staff");
-for (let button of navStaff) {
-  button.addEventListener("click", paintStaff);
-}
+
+scroll({
+  top: offsetTop,
+  behavior: "smooth",
+});

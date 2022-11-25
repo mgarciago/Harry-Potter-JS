@@ -1,7 +1,7 @@
 //---------------------------------------------------FILES IMPORT-----------------------------------------------------------------
-
-@import "./list-styles.scss";
-@import "./detail-styles.scss";
+/* 
+@import "list-styles";
+@import "detail-styles"; */
 
 //---------------------------------------------------FONTS IMPORT-----------------------------------------------------------------
 
@@ -28,8 +28,16 @@ $letter-color: #f6f0ff;
     padding: 0;
 }
 
-.page {
+.page,
+html {
     text-align: center;
+    text-align: center;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $background-color;
+    z-index: 0;
 
     &__container {
         &__header {
@@ -38,7 +46,8 @@ $letter-color: #f6f0ff;
             padding: 5%;
             margin: 0 0 0 -3%;
             position: fixed;
-            z-index: 3;
+            z-index: 4;
+            background-color: rgba(0, 0, 0, 0.671);
 
             &__logo {
                 width: 15%;
@@ -53,7 +62,7 @@ $letter-color: #f6f0ff;
                 width: 90%;
                 z-index: 3;
                 margin: 3% 0 0% 4%;
-    
+
                 &__link {
                     color: $letter-color;
                     background-color: transparent;
@@ -66,13 +75,12 @@ $letter-color: #f6f0ff;
                     z-index: 3;
                     cursor: pointer;
                 }
-    
+
                 &__link:hover {
                     color: $secondary-color;
                 }
             }
         }
-
 
         &__stars,
         &__twinkling,
@@ -84,22 +92,22 @@ $letter-color: #f6f0ff;
             bottom: 0;
             width: 100%;
             height: 100%;
-            display: block;
+            
         }
 
         &__stars {
-            background: $background-color url(../assets/images/stars.png) repeat top center;
+            background: $background-color url(../assets/images/stars.png);
             z-index: 0;
         }
 
         &__twinkling {
-            background: transparent url(../assets/images/twinkling.png) repeat top center;
+            background: transparent url(../assets/images/twinkling.png);
             z-index: 1;
             animation: move-twink-back 200s linear infinite;
         }
 
         &__clouds {
-            background: transparent url(../assets/images/clouds.png) repeat top center;
+            background: transparent url(../assets/images/clouds.png);
             z-index: 2;
             opacity: 0.4;
             animation: move-clouds-back 200s linear infinite;
@@ -131,6 +139,9 @@ $letter-color: #f6f0ff;
                 display: none;
             }
         }
+
+        @import "list-styles";
+        @import "detail-styles";
     }
 }
 

@@ -1,14 +1,14 @@
-import { getStudents, getStaff } from "../info.js";
+import { getCharacters} from "../info.js";
 import {getDetail} from "./detail.js"
 
-const allStudents = await getStudents();
-const allStaff = await getStaff();
+const allCharacters = await getCharacters();
 
-function paintStudents() {
+
+function paintCharacters () {
 
   const principalTitle = document.getElementsByClassName("title");
   for (let title of principalTitle) {
-    title.innerText = "Students";
+    title.innerText = "Characters";
     title.style.display = "block";
   }
 
@@ -17,69 +17,29 @@ function paintStudents() {
     intro.classList.add("page__container__introduction--disabled")
   }
 
-  const staffContainer = document.getElementsByClassName("staff-container");
-  for(let staff of staffContainer) {
-    staff.classList.add("page__container__characters--disabled")
-  }
+  const charactersContainer =
+    document.getElementsByClassName("characters-container");
 
-  const studentsContainer =
-    document.getElementsByClassName("students-container");
-
-  allStudents.map((student) => {
+  allCharacters.map((character) => {
     const card = document.createElement("div");
     card.classList.add("page__container__characters__card");
-    card.addEventListener("click", () => getDetail(student));
+    card.addEventListener("click", () => getDetail(character));
     const image = document.createElement("img");
     image.classList.add("page__container__characters__card__image");
-    image.src = student.image;
+    image.src = character.image;
     card.appendChild(image);
     const name = document.createElement("h5");
     name.classList.add("page__container__characters__card__name");
-    name.innerText = student.name;
+    name.innerText = character.name;
     card.appendChild(name);
-    for (let container of studentsContainer) {
+    for (let container of charactersContainer) {
         container.classList.remove("page__container__characters--disabled")
       container.appendChild(card);
     }
   });
 }
 
-function paintStaff() {
-  const principalTitle = document.getElementsByClassName("title");
-  for (let title of principalTitle) {
-    title.innerText = "Staff";
-    title.style.display = "block";
-  }
 
-  const introContainer = document.getElementsByClassName("intro-container");
-  for(let intro of introContainer) {
-    intro.classList.add("page__container__introduction--disabled")
-  }
 
-  const studentsContainer = document.getElementsByClassName("students-container")
-  for(let students of studentsContainer){
-    students.classList.add("page__container__characters--disabled")
-  }
-  
-  const staffContainer = document.getElementsByClassName("staff-container");
-  allStaff.map((staff) => {
-    const card = document.createElement("div");
-    card.classList.add("page__container__characters__card");
-    card.addEventListener("click", getDetail);
-    const image = document.createElement("img");
-    image.classList.add("page__container__characters__card__image");
-    image.src = staff.image;
-    card.appendChild(image);
-    const name = document.createElement("h5");
-    name.classList.add("page__container__characters__card__name");
-    name.innerText = staff.name;
-    card.appendChild(name);
-    for(let container of staffContainer){
-        container.classList.remove("page__container__characters--disabled")
-        container.appendChild(card)
-    }
-  });
-}
+export { paintCharacters  };
 
-export { paintStudents };
-export {paintStaff};
