@@ -106,8 +106,10 @@ $letter-color: #f6f0ff;
         }
 
         &__title-container {
-           
             margin-top: 30%;
+            &--disabled {
+                display: none;
+            }
             &__title {
                 color: $letter-color;
                 margin-top: 10%;

@@ -9,6 +9,7 @@ function paintStudents() {
   const principalTitle = document.getElementsByClassName("title");
   for (let title of principalTitle) {
     title.innerText = "Students";
+    title.style.display = "block";
   }
 
   const introContainer = document.getElementsByClassName("intro-container");
@@ -47,6 +48,7 @@ function paintStaff() {
   const principalTitle = document.getElementsByClassName("title");
   for (let title of principalTitle) {
     title.innerText = "Staff";
+    title.style.display = "block";
   }
 
   const introContainer = document.getElementsByClassName("intro-container");
