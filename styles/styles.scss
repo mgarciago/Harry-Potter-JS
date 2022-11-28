@@ -40,7 +40,14 @@ html {
     z-index: 0;
 
     &__container {
-        &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        &__header,
+        &__footer {
             top: 0;
             width: 100%;
             padding: 5%;
@@ -92,7 +99,6 @@ html {
             bottom: 0;
             width: 100%;
             height: 100%;
-            
         }
 
         &__stars {
@@ -135,14 +141,16 @@ html {
         }
 
         &__introduction {
-           display: flex;
-           text-align: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
 
             &--disabled {
                 display: none;
             }
 
-            &__message{
+            &__message,
+            &__explanation {
                 z-index: 3;
                 background-color: $secondary-color;
                 color: $letter-color;
@@ -159,10 +167,37 @@ html {
                     display: none;
                 }
             }
+
+            &__explanation {
+                font-family: $common-font;
+                font-size: 120%;
+                text-align: justify;
+                letter-spacing: 0;
+                border-radius: 10%;
+            }
         }
 
         @import "list-styles";
         @import "detail-styles";
+
+        &__footer {
+            display: flex;
+            top: 90%;
+            bottom: 0;
+            align-items: center;
+            justify-content: space-evenly;
+            align-content: center;
+
+            &__link {
+                width: 10%;
+                z-index: 4;
+                cursor: pointer;
+            }
+
+            .instagram {
+                width: 100%;
+            }
+        }
     }
 }
 

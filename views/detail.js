@@ -25,15 +25,15 @@ function getDetail(character) {
     title.style.fontSize = "340%";
   }
 
-  const dataContainer = document.createElement('div');
-  dataContainer.classList.add("page__container__details__card__info-container")
+  const dataContainer = document.createElement("div");
+  dataContainer.classList.add("page__container__details__card__info-container");
   card.appendChild(dataContainer);
 
   for (let key in character) {
     const data = document.createElement("p");
     data.classList.add("page__container__details__card__info-container__info");
     switch (key) {
-      case "name", "image":
+      case ("name", "image"):
         data.innerText = "";
         break;
       case "wand":
@@ -59,7 +59,7 @@ function getDetail(character) {
 
   for (let container of detail) {
     container.appendChild(card);
-    container.classList.remove("page__container__details--disabled")
+    container.classList.remove("page__container__details--disabled");
   }
 }
 export { getDetail };

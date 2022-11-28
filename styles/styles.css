@@ -22,8 +22,17 @@ html {
   background-color: #000;
   z-index: 0;
 }
-.page__container__header,
-html__container__header {
+.page__container,
+html__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.page__container__header, .page__container__footer,
+html__container__header,
+html__container__footer {
   top: 0;
   width: 100%;
   padding: 5%;
@@ -32,13 +41,15 @@ html__container__header {
   z-index: 4;
   background-color: rgba(0, 0, 0, 0.671);
 }
-.page__container__header__logo,
-html__container__header__logo {
+.page__container__header__logo, .page__container__footer__logo,
+html__container__header__logo,
+html__container__footer__logo {
   width: 15%;
   cursor: pointer;
 }
-.page__container__header__nav,
-html__container__header__nav {
+.page__container__header__nav, .page__container__footer__nav,
+html__container__header__nav,
+html__container__footer__nav {
   display: flex;
   display: flex;
   align-items: center;
@@ -48,8 +59,9 @@ html__container__header__nav {
   z-index: 3;
   margin: 3% 0 0% 4%;
 }
-.page__container__header__nav__link,
-html__container__header__nav__link {
+.page__container__header__nav__link, .page__container__footer__nav__link,
+html__container__header__nav__link,
+html__container__footer__nav__link {
   color: #f6f0ff;
   background-color: transparent;
   border: none;
@@ -61,8 +73,9 @@ html__container__header__nav__link {
   z-index: 3;
   cursor: pointer;
 }
-.page__container__header__nav__link:hover,
-html__container__header__nav__link:hover {
+.page__container__header__nav__link:hover, .page__container__footer__nav__link:hover,
+html__container__header__nav__link:hover,
+html__container__footer__nav__link:hover {
   color: rgb(81, 68, 107);
 }
 .page__container__stars, .page__container__twinkling, .page__container__clouds,
@@ -123,14 +136,16 @@ html__container__title-container__title {
 .page__container__introduction,
 html__container__introduction {
   display: flex;
+  flex-direction: column;
   text-align: center;
 }
 .page__container__introduction--disabled,
 html__container__introduction--disabled {
   display: none;
 }
-.page__container__introduction__message,
-html__container__introduction__message {
+.page__container__introduction__message, .page__container__introduction__explanation,
+html__container__introduction__message,
+html__container__introduction__explanation {
   z-index: 3;
   background-color: rgb(81, 68, 107);
   color: #f6f0ff;
@@ -143,9 +158,18 @@ html__container__introduction__message {
   border: 5px solid #f6f0ff;
   border-radius: 15%;
 }
-.page__container__introduction__message--disabled,
-html__container__introduction__message--disabled {
+.page__container__introduction__message--disabled, .page__container__introduction__explanation--disabled,
+html__container__introduction__message--disabled,
+html__container__introduction__explanation--disabled {
   display: none;
+}
+.page__container__introduction__explanation,
+html__container__introduction__explanation {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 120%;
+  text-align: justify;
+  letter-spacing: 0;
+  border-radius: 10%;
 }
 .page__container__characters,
 html__container__characters {
@@ -187,6 +211,7 @@ html__container__characters__card__name {
 html__container__details {
   z-index: 3;
   display: flex;
+  width: 90%;
 }
 .page__container__details--disabled,
 html__container__details--disabled {
@@ -230,6 +255,25 @@ html__container__details__card__info-container__info {
   margin: 5%;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 110%;
+}
+.page__container__footer,
+html__container__footer {
+  display: flex;
+  top: 90%;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.page__container__footer__link,
+html__container__footer__link {
+  width: 10%;
+  z-index: 4;
+  cursor: pointer;
+}
+.page__container__footer .instagram,
+html__container__footer .instagram {
+  width: 100%;
 }
 
 @-webkit-keyframes move-twink-back {

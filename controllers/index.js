@@ -16,12 +16,17 @@ const introContainer = document.getElementsByClassName("intro-container");
       for(let mes of message){
         mes.classList.add("page__container__introduction__message--disabled")
       }
+
+      const explanationHome = document.getElementsByClassName("page__container__introduction__explanation");
+      for(let explanation of explanationHome){
+        explanation.classList.remove("page__container__introduction__explanation--disabled")
+      }
     }, 6000);
   }
 
 
 function backHome(clicked) {
-  let lastClicked;
+  let lastClicked = "";
   const principalTitle = document.getElementsByClassName("title");
   for (let title of principalTitle) {
     title.style.display = "block";
@@ -48,11 +53,11 @@ function backHome(clicked) {
     const introContainer = document.getElementsByClassName("intro-container");
     for (let intro of introContainer) {
      const infoMessage = document.createElement("h2");
+     infoMessage.classList.add("page__container__introduction__message")
      infoMessage.innerText = "You are already here!"
      intro.appendChild(infoMessage);
     }
   }
-
   lastClicked = clicked;
 
 }

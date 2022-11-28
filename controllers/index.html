@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="../styles/styles.css" />
     <script type="module" src="index.js" defer></script>
-    <script type="module" src="../views/list.js" defer></script>
-    <script type="module" src="../info.js" defer></script>
     <title>Platform 9¾</title>
   </head>
   <body class="page">
@@ -23,22 +21,56 @@
           alt="Nine and Three Quarters logo"
         />
         <nav class="nav page__container__header__nav">
-            <button class="characters page__container__header__nav__link">Characters</button>
-            <button class="home page__container__header__nav__link">Home</button>
-          </nav>
+          <button class="characters page__container__header__nav__link">
+            Characters
+          </button>
+          <button class="home page__container__header__nav__link">Home</button>
+        </nav>
       </header>
 
-   
       <div class="title-container page__container__title-container">
-        <h1 class="title page__container__title-container__title">Platform 9¾</h1>
+        <h1 class="title page__container__title-container__title">
+          Platform 9¾
+        </h1>
       </div>
-      <div class="intro-container page__container__introduction"></div>
+      <div class="intro-container page__container__introduction">
+        <p class="page__container__introduction__explanation page__container__introduction__explanation--disabled">
+          In this page you can find all the characters of the Harry Potter saga.
+
+          By clicking on "characters" you will view a list of them. If you click
+          on one of them, you can see more details about this character. 
+          
+          If you wish to return to the list you just have to click on "characters"
+          again and if you want to return to the main page you just have to
+          click on "home" or on the image in the header.
+        </p>
+      </div>
       <div class="characters-container page__container__characters"></div>
       <div class="detail-container page__container__details"></div>
+
+      <footer class="footer page__container__footer">
+        <a
+          class="page__container__footer__link"
+          href="https://github.com/mimigargon"
+          ><img
+            class="github page__container__footer__link__image"
+            src="../assets/images/github-icon.svg"
+        /></a>
+        <a
+          class="page__container__footer__link"
+          href="https://www.instagram.com/mimi.gagon/"
+          ><img
+            class="instagram page__container__footer__link__image"
+            src="../assets/images/instagram-icon.svg"
+        /></a>
+        <a
+          class="page__container__footer__link"
+          href="https://twitter.com/mimigagon"
+          ><img
+            class="twitter page__container__footer__link__image"
+            src="../assets/images/twitter-icon.svg"
+        /></a>
+      </footer>
     </div>
-
-    <footer class="footer page__container__footer">
-
-    </footer>
   </body>
 </html>
