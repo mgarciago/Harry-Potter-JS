@@ -25,8 +25,7 @@ const introContainer = document.getElementsByClassName("intro-container");
   }
 
 
-function backHome(clicked) {
-  let lastClicked = "";
+function backHome() {
   const principalTitle = document.getElementsByClassName("title");
   for (let title of principalTitle) {
     title.style.display = "block";
@@ -47,18 +46,10 @@ function backHome(clicked) {
   const introContainer = document.getElementsByClassName("intro-container");
   for (let intro of introContainer) {
     intro.classList.remove("page__container__introduction--disabled");
-  }
-
-  if(lastClicked === clicked){
-    const introContainer = document.getElementsByClassName("intro-container");
-    for (let intro of introContainer) {
-     const infoMessage = document.createElement("h2");
-     infoMessage.classList.add("page__container__introduction__message")
-     infoMessage.innerText = "You are already here!"
-     intro.appendChild(infoMessage);
+    if(intro.classList !== "page__container__introduction--disabled"){
+      alert("You are already here!")
     }
   }
-  lastClicked = clicked;
 
 }
 
