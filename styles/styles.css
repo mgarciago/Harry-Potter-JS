@@ -120,8 +120,31 @@ html__container__title-container__title {
   position: relative;
   z-index: 3;
 }
+.page__container__introduction,
+html__container__introduction {
+  display: flex;
+  text-align: center;
+}
 .page__container__introduction--disabled,
 html__container__introduction--disabled {
+  display: none;
+}
+.page__container__introduction__message,
+html__container__introduction__message {
+  z-index: 3;
+  background-color: rgb(81, 68, 107);
+  color: #f6f0ff;
+  font-family: "Magic School";
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-size: 250%;
+  margin: 10%;
+  padding: 10%;
+  border: 5px solid #f6f0ff;
+  border-radius: 15%;
+}
+.page__container__introduction__message--disabled,
+html__container__introduction__message--disabled {
   display: none;
 }
 .page__container__characters,

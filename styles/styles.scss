@@ -135,8 +135,29 @@ html {
         }
 
         &__introduction {
+           display: flex;
+           text-align: center;
+
             &--disabled {
                 display: none;
+            }
+
+            &__message{
+                z-index: 3;
+                background-color: $secondary-color;
+                color: $letter-color;
+                font-family: $title-font;
+                letter-spacing: 3px;
+                font-weight: 100;
+                font-size: 250%;
+                margin: 10%;
+                padding: 10%;
+                border: 5px solid $letter-color;
+                border-radius: 15%;
+
+                &--disabled {
+                    display: none;
+                }
             }
         }
 
